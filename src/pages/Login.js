@@ -14,11 +14,15 @@ export default function Login() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor='email'>Email: </label>
-          <input type='email' id='email' {...register('email')}/>
+          <input name='email'
+            type='email'
+            id='email' {...register('email')}/>
         </div>
         <div>
           <label htmlFor='password'>Password: </label>
-          <input id='password' type='password' {...register('password')}/>
+          <input name='password'
+            id='password'
+            type='password' {...register('password')}/>
         </div>
         <button type='submit'>
             Submit

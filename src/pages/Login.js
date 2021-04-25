@@ -1,6 +1,8 @@
 import React from 'react';
 import {
+  Box,
   Button,
+  Container,
   TextField
 } from '@material-ui/core';
 import { useForm } from "react-hook-form";
@@ -13,31 +15,34 @@ export default function Login() {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <TextField
-            name='email'
-            id='email'
-            type='email'
-            label='Email: '
-            variant="filled"
-            {...register('email')}
-          />
-        </div>
-        <div>
-          <TextField
-            name='password'
-            id='password'
-            label='Password: '
-            variant="filled"
-            {...register('password')}
-          />
-        </div>
-        <Button variant="contained" type='submit'>
-            Submit
-        </Button>
-      </form>
-    </>
+    <Container maxWidth='sm' m='auto'>
+      <Box m={4}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Box pb={2}>
+            <TextField
+              name='email'
+              id='email'
+              type='email'
+              label='Email: '
+              variant='filled'
+              {...register('email')}
+            />
+          </Box>
+          <Box pb={2}>
+            <TextField
+              name='password'
+              id='password'
+              label='Password: '
+              type='password'
+              variant='filled'
+              {...register('password')}
+            />
+          </Box>
+          <Button variant="contained" type='submit'>
+              Submit
+          </Button>
+        </form>
+      </Box>
+    </Container>
   );
 }

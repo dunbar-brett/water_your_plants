@@ -1,5 +1,8 @@
 import React from 'react';
-
+import {
+  Button,
+  TextField
+} from '@material-ui/core';
 import { useForm } from "react-hook-form";
 
 export default function Login() {
@@ -13,20 +16,27 @@ export default function Login() {
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label htmlFor='email'>Email: </label>
-          <input name='email'
+          <TextField
+            name='email'
+            id='email'
             type='email'
-            id='email' {...register('email')}/>
+            label='Email: '
+            variant="filled"
+            {...register('email')}
+          />
         </div>
         <div>
-          <label htmlFor='password'>Password: </label>
-          <input name='password'
+          <TextField
+            name='password'
             id='password'
-            type='password' {...register('password')}/>
+            label='Password: '
+            variant="filled"
+            {...register('password')}
+          />
         </div>
-        <button type='submit'>
+        <Button variant="contained" type='submit'>
             Submit
-        </button>
+        </Button>
       </form>
     </>
   );

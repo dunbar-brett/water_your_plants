@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       {/* nav bar goes here */}
-      <Login></Login>
+      <Login />
     </div>
   );
 }
